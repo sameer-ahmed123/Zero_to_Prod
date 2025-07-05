@@ -2,8 +2,8 @@
 
 ## todo
 
-- [] make it deplay
-- [] scaffold basic ui with mock data
+- [x] make it deplay
+- [x] scaffold basic ui with mock data
 - [] setup database (w/vercel postgres)
 - [] attach database to UI
 - [] add authentication (w/Clerck)
