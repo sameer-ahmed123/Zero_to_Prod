@@ -4,6 +4,7 @@
 
 - [x] make it deplay
 - [x] scaffold basic ui with mock data
+- [x] Tidy up buid process
 - [] setup database (w/vercel postgres)
 - [] attach database to UI
 - [] add authentication (w/Clerck)
