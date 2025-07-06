@@ -5,8 +5,8 @@
 - [x] make it deplay
 - [x] scaffold basic ui with mock data
 - [x] Tidy up buid process
-- [] setup database (w/vercel postgres)
-- [] attach database to UI
+- [x] setup database (w/vercel postgres)
+- [x] attach database to UI
 - [] add authentication (w/Clerck)
 - [] add image upload
 - [] Error Management (w/sentry)
