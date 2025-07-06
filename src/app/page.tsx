@@ -1,7 +1,10 @@
-import Link from "next/link";
+
 import { db } from "../server/db";
+export const dynamic = "force-dynamic"; // This is to ensure the page is always dynamic and not cached
+
 export default async function HomePage() {
   const posts = await db.query.posts.findMany();
+
   const mockUrls = [
     "https://mwwq3m28t9.ufs.sh/f/Mb0fnSTJI70uPerCk2VcD8jYlCw6N4GFkHsVS0IdT7LObozK",
     "https://mwwq3m28t9.ufs.sh/f/Mb0fnSTJI70uWShPSYj9NmVLIr7X1huBKbA6yl0DgGewUsiO",
