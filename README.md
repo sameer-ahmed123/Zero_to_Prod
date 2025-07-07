@@ -10,6 +10,7 @@
 - [x] add authentication (w/Clerck)
 - [] add image upload
 - [] "taint" (server-only)
+- [] Use Next/Image component
 - [] Error Management (w/sentry)
 - [] Routing/image page (parallel route)
 - [] Delete Button w/( server action)
