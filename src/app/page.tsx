@@ -1,11 +1,8 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
-import { db } from "../server/db";
 export const dynamic = "force-dynamic"; // This is to ensure the page is always dynamic and not cached
-
+import { getMyImages } from "~/server/queries";
 async function Images() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.createdAt),
-  });
+  const images = await getMyImages();
 
   return (
     <div className="flex flex-wrap gap-4">
@@ -23,7 +20,10 @@ export default function HomePage() {
   return (
     <main className="">
       <SignedOut>
-        <div className="h-full w-full text-2xl text-center"> Please Sign in above</div>
+        <div className="h-full w-full text-center text-2xl">
+          {" "}
+          Please Sign in above
+        </div>
       </SignedOut>
       <SignedIn>
         <Images />

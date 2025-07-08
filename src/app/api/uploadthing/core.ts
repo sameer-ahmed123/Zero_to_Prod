@@ -34,6 +34,10 @@ export const ourFileRouter = {
       // This code RUNS ON YOUR SERVER after upload
       console.log("Upload complete for userId:", metadata.userId);
 
+      if (!metadata.userId) {
+        throw new Error("User ID not found");
+      }
+
       await db.insert(images).values({
         name: file.name,
         url: file.url,
