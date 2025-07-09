@@ -1,7 +1,6 @@
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
 
-
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 import { TopNav } from "./_components/topnav";
@@ -23,11 +22,15 @@ const geist = Geist({
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  modal,
+}: Readonly<{
+  children: React.ReactNode;
+  modal: React.ReactNode | undefined;
+}>) {
   return (
     <ClerkProvider>
       <html lang="en">
-         <NextSSRPlugin
+        <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
            * from the router to prevent additional information from being
@@ -39,6 +42,8 @@ export default function RootLayout({
         <body className={`${geist.variable}` + "flex flex-col gap-4"}>
           <TopNav />
           {children}
+          {modal}
+          <div id="modal-root"></div>
         </body>
       </html>
     </ClerkProvider>

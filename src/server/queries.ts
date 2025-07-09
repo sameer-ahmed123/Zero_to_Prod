@@ -18,3 +18,22 @@ export async function getMyImages() {
 
   return images
 }
+
+
+export async function getImageById(id: number) {
+  const userAuth = auth();
+  const user = await userAuth;
+  if (!user.userId) {
+    throw new Error("User not authenticated");
+  }
+
+  const image = await db.query.images.findFirst({
+    where: (model, { eq }) => eq(model.id, id),
+  });
+
+  if (!image || image.userId !== user.userId) {
+    throw new Error("Image not found or access denied");
+  }
+
+  return image;
+}
