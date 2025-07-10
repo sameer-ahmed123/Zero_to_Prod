@@ -11,7 +11,8 @@ export default async function FullPageImageView(props: { id: number }) {
         <img
           src={image.url}
           alt={image.name || "Image"} // Add a descriptive alt text for accessibility
-          className="flex-shrink object-contain" // Added some Tailwind classes for better visuals
+          className="flex-shrink object-contain" 
+          // Added some Tailwind classes for better visuals
         />
       </div>
       <div className="flex w-48 flex-shrink-0 flex-col  border-l">
