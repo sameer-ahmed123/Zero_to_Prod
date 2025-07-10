@@ -1,7 +1,16 @@
-export default function PhotoModal({
-  params: { id: photoId },
+import FullPageImageView from "~/components/full-image-page";
+import { getImageById } from "~/server/queries";
+
+export default async function PhotoPage({
+  params, // Access the entire params object first
 }: {
   params: { id: string };
 }) {
-  return <div>{photoId}</div>;
+  const { id: photoId } = await params;
+
+  const pic_id = Number(photoId);
+
+  const image = await getImageById(pic_id);
+
+  return <FullPageImageView id={pic_id} />;
 }
