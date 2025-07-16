@@ -8,6 +8,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Prod Gallery",
@@ -39,12 +40,13 @@ export default function RootLayout({
            */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
-        <body className={`${geist.variable}` + "flex flex-col gap-4 p-4"}>
+        <body className={`${geist.variable}` + "flex flex-col gap-4 p-4 dark"}>
           <div className="grid h-screen grid-rows-[auto_1fr] ">
             <TopNav />
             <main className="overflow-y-scroll">{children}</main>
           </div>
           {modal}
+          <Toaster/>
           <div id="modal-root"></div>
         </body>
       </html>
