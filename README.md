@@ -15,5 +15,5 @@
 - [x] Routing/image page (parallel route)
 - [x] shadUI (toast)
 - [x] Analytics (posthog)
-- [] Delete Button w/( server action)
+- [x] Delete Button w/( server action)
 - [] Ratelimiting (upstash)
