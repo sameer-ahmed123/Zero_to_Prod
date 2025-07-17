@@ -1,5 +1,5 @@
 import { Modal } from "../modal"; // Ensure this path is correct based on your file structure
-import FullPageImageView from "~/components/full-image-page";
+import FullPageImageView from "~/app/common/full-image-page";
 /**
  *
  * @param {object} props - The component props.
