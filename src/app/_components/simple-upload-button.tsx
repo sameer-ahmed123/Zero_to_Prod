@@ -73,7 +73,7 @@ function LoadingSpinnerSvg() {
 
 export function SimpleUploadButton() {
   const router = useRouter();
-  const posthog = usePostHog()
+  const posthog = usePostHog();
   const { inputProps } = useUploadThingInputProps("imageUploader", {
     onUploadBegin() {
       posthog.capture("upload_started");
@@ -89,10 +89,12 @@ export function SimpleUploadButton() {
         },
       );
     },
-    onUploadError(error){
-      posthog.capture("upload_error",{error});
+    onUploadError(error) {
+      posthog.capture("upload_error", { error });
       toast.dismiss("upload-started");
-      toast.error("upload failed")
+      toast.error("upload failed", {
+        description: error.message,
+      });
     },
     onClientUploadComplete() {
       toast.dismiss("upload-started");
